@@ -1,63 +1,73 @@
-<div class="container" style=" width: 100rem !important;">
+<div class="contenido" style=" width: 100rem !important; margin-left: 50px;">
 
-  <div class="text-right">	
-		  <form class="navbar-form navbar-left">
-		  <div class="input-group">
-		    <input type="text" class="form-control" placeholder="Search">
-		    <div class="input-group-btn">
-		      <button class="btn btn-default" type="submit">
-		        Buscar
-		      </button>
-		    </div>
-		  </div>
-		</form>	  
+		  <div class="text-right">	
 
-	  <a class="btn btn-primary" href="/users/new" style="margin-left: 89%;" >
-	  + Agregar un nuevo usuario</a>
- </div>	
- <br>
-
-<div class="panel panel-default" style="width: 110%;">
-
-  <div class="panel-heading">
-  	<h3>Lista de Usuarios</h3>		
-  </div>
-  	<div class="panel-body">
-			<div class="bs-example" data-example-id="condensed-table">
-			 <table class="table table-condensed"> 
-					 <thead> 
-					 	<tr> 
-						 	<th>#</th> 
-						 	<th>#RUT</th> 
-						 	<th>Nombre</th> 
-						 	<th>Apellido</th> 
-						 	<th>Email</th> 
-						 	<th>Fecha de nacimiento</th> 
-						 	<th>Password</th> 
-						 	<th>Imagen</th> 
-						 	<th></th> 
-						 	<th></th> 
-					 	</tr>
-					 </thead> 
-			 		<tbody>
-						<% @users.each do |user| %>
-				 		 <tr> 
-
-				 		 	<th scope="row"><%= user.id %></th>
-				 		 		<td><%= user.rut %></td>
-				 		 		<td><%= user.nombre %></td>
-				 		 		<td><%= user.apellido %></td>
-				 		 		<td><%= user.email %></td>	 		 	
-				 		 		<td><%= user.birth %></td>
-				 		 		<td><%= user.password %></td>
-				 		 		<td><%= user.image %></td>
-				 		 		<td><%= link_to "Eliminar", user, method: :delete %></td>	 	
-				 		 		<td><%= link_to "Ver", user, class:"btn btn-primary" %></td>	 		 	
-				 		 </tr>
-				 		 <%end%>		
-			 		</tbody>
-			 </table>
+		  	<div class="alert alert-warning text-left">
+			  <strong>Advertencia</strong>
+			  <p>*-Para editar informacion debe presionar el boton "Ver" de un registro de la lista</p>			  
+			  <p>*-Las imagenes que desee cargar debe estar incluidas en la carpeta app/assets/images/img/</p>
+			  <p>*-El formato que puede utiliza el sistema es .jpg y .png</p>
 			</div>
-		</div>
-  	</div>
+
+				  <form class="navbar-form navbar-left">
+				  <div class="input-group">
+				    <input type="text" class="form-control" placeholder="Search">
+				    <div class="input-group-btn">
+				      <button class="btn btn-default" type="submit">
+				        Buscar
+				      </button>
+				    </div>
+				  </div>
+				</form>	  
+
+			  <a class="btn btn-primary" href="/users/new" style="margin-left: 89%;" >
+			  + Agregar un nuevo usuario</a>
+		 </div>	
+		 <br>
+
+		<div class="panel panel-default" style="width: 110%;">
+
+		  <div class="panel-heading">
+		  	<h3>Lista de Usuarios</h3>		
+		  </div>
+		  	<div class="panel-body">
+					<div class="bs-example" data-example-id="condensed-table">
+					 <table class="table table-condensed"> 
+							 <thead> 
+							 	<tr> 
+								 	<th>#ID</th> 
+								 	<th>#RUT</th> 
+								 	<th>Perfil</th> 
+								 	<th>Nombre</th> 
+								 	<th>Apellido</th> 
+								 	<th>Email</th> 
+								 	<th>Fecha de nacimiento</th> 
+								 	<th>Password</th> 
+								 	<th>Imagen</th> 
+								 	<th></th> 
+								 	<th></th> 
+							 	</tr>
+							 </thead> 
+					 		<tbody>
+								<% @users.each do |user| %>
+						 		 <tr> 
+
+						 		 	<th scope="row"><%= user.id %></th>
+						 		 		<td><%= user.rut %></td>	      
+						 		 		<td><%= image_tag user.image.url(), class:"img-circle circle_s" %></td>
+						 		 		<td><%= user.nombre %></td>
+						 		 		<td><%= user.apellido %></td>
+						 		 		<td><%= user.email %></td>	 		 	
+						 		 		<td><%= user.birth %></td>
+						 		 		<td><%= user.password %></td>
+						 		 		<td><%= user.image %></td>
+						 		 		<td><%= link_to "Eliminar", user, method: :delete %></td>	 	
+						 		 		<td><%= link_to "Ver", user, class:"btn btn-primary" %></td>	 		 	
+						 		 </tr>
+						 		 <%end%>		
+					 		</tbody>
+					 </table>
+					</div>
+				</div>
+		  	</div>
 </div>	

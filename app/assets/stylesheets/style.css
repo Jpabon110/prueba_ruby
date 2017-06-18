@@ -6,3 +6,12 @@
 	text-decoration: none;
 	padding: 20px;
 }
+
+.editar{
+	float: right;
+    margin-right: 200px;
+}
+
+.circle_s{
+	width: 45px; height: 45px;
+}
