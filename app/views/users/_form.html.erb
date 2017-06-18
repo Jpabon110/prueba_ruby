@@ -1,0 +1,69 @@
+
+<% name ||="Crear" %>
+<%= form_for (@user) do  |f| %>
+<div class="container">	
+		<% @user.errors.full_messages.each do |message| %>
+			<div class="alert alert-warning">
+			  <strong>Advertencia</strong> * <%= message %>
+			</div>
+
+		<%end%>
+	  <div class="panel panel-primary">
+	    <div class="panel-heading"><h1><%= name %> de usuario</h1></div>
+	      <div class="panel-body">
+
+					<div class="form-group">
+						<label for="example-email-input" class="col-2 col-form-label">RUT:</label>
+							 <div class="col-10">
+									<%= f.text_field :rut, placeholder: "Ingrese su RUT", class:"form-control" %>
+							 </div>		
+					</div>
+
+					<div class="form-group">
+						<label for="example-email-input" class="col-2 col-form-label">Nombre:</label>
+							<div class="col-10">
+								<%= f.text_field :nombre, placeholder: "Ingrese su Nombre", class:"form-control" %>
+							</div>	
+					</div>
+
+					<div class="form-group">
+						<label for="example-email-input" class="col-2 col-form-label">Apellido:</label>
+							<div class="col-10">
+								<%= f.text_field :apellido, placeholder: "Ingrese su Apellido", class:"form-control" %>
+							</div>	
+					</div>
+					<div class="form-group">
+						<label for="example-email-input" class="col-2 col-form-label">Imagen de perfil:</label>
+							<div class="col-10">
+								<%= f.file_field :image, class:"form-control" %>
+							</div>	
+					</div>
+
+					<div class="form-group">
+						<label for="example-email-input" class="col-2 col-form-label">Email:</label>
+							<div class="col-10">
+								<%= f.text_field :email, placeholder: "Ingrese su Email", class:"form-control" %>
+							</div>	
+					</div>
+
+					<div class="form-group">
+						<label for="example-email-input" class="col-2 col-form-label">Fecha de nacimiento:</label>
+							<div class="col-10">
+								<%= f.text_field :birth, placeholder: "Ingrese su Fecha de nacimiento", class:"form-control" %>
+							</div>	
+					</div>
+
+					<div class="form-group">
+						<label for="example-email-input" class="col-2 col-form-label">Password:</label>	
+						 <div class="col-10">
+							<%= f.password_field :password, placeholder: "Ingrese su Password", class:"form-control" %>
+						</div>		
+					</div>
+
+				<%= f.submit "Guardar", class:"btn btn-primary" %>
+					
+			</div>
+	    </div>	
+</div>		
+
+<%end%>	
