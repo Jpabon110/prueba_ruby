@@ -1,0 +1,29 @@
+Instrucciones
+
+Para evitar conflitos con algunos formatos de imagenes y validaciones a causa de formtos maliciosos es necesarios instalar los siguientes programas:
+
+>>ImageMagick
+
+	http://www.imagemagick.org/script/binary-releases.php#windows
+
+	Sector: Windows Binary Release 
+
+	**Buscar el archivo compatible con tu sistema operativo (32bits o 64 bits)
+	**Al instalarlo debes tener las siguientes opciones tildadas
+		>Add applicaton directory to your system path
+		>Install FFmpeg
+		>Install Legacy utilities (e.g. convert)
+		>Install Dvelopment headers and libraries for C and C++
+
+>>GnuWin
+	
+	http://sourceforge.net/projects/gnuwin32/files/file/5.03/file-5.03-setup.exe/download?use_mirror=hivelocity
+
+	**Importante: 
+		la ruta de la instalacion debe ser igual a esta 'C:\Program Files\GnuWin32\bin',
+		de esta forma evitamos valiaciones inecesarias de imagenes.
+
+
+
+
+
